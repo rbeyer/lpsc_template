@@ -1,0 +1,100 @@
+\documentclass{article}  % Do NOT delete this line
+\usepackage{lpiabstr_2e} % Do NOT delete this line
+\usepackage{times}
+
+% This is the macro file to use with LaTeX version 2e. It is written to
+% work with the accompanying style file lpiabstr_2e.sty. 
+
+% NOTE:  The style file lpiabstr.sty requires access to the Times 
+% font package; if you do not have these fonts on your system, the 
+% template and style file will not work. The font package can be 
+% retrieved from any CTAN (Comprehensive TeX Archive Network) site;
+% go to
+%
+% http://www.ctan.org/
+%
+% and click on "CTAN mirror" for a listing of the site nearest you.
+
+
+\begin{document}  % Do NOT delete this line
+
+% Type your title in the argument below, using upper- and lower-case letters:
+
+\title{Global Evolution of Solids in Viscous Protoplanetary Disks}
+
+% Type your authors as shown in the example below, listing each author in
+% a separate author argument, with affiliation given in the affiliation 
+% argument as needed:
+
+\author{J. R. Dotson}
+\affil{Lunar and Planetary Institute, Houston TX 77058-1113, USA,
+(dotson@lpi.usra.edu)}
+\author{D. Hilbert}
+\author{S. L. Hokanson}
+\author{L. Tanner}
+\affil{Department of Astronomy, University of Houston-Clear Lake, 
+Houston TX 77058, USA}
+\author{A. Wiles}
+\author{S. Lee}
+\affil{Geology Department, University of Illinois, Chicago IL 60637, USA}
+
+% If your abstract is two pages long, type your running head in the argument
+% below:
+
+\runningtitle{GLOBAL EVOLUTION: J. R. Dotson et al.}
+
+\titlemake  % Sets the title, author information; do NOT delete
+
+\begin{abstracttext}
+This macro will format your abstract for the volume.
+You will have retrieved this template file and the macro file lpiabstr\_2e.sty
+from the meeting Web site.  The macro file lpiabstr\_2e.sty can be placed
+in the same directory as your abstract, or in any of the standard LaTeX
+input directories.  The macro file assumes that you are running LaTeX 2e;
+if you are running LaTeX 2.09, you should use the 2.09 macros instead.
+
+If your LaTeX system does not have a macro called ''times'' to configure
+the use of PostScript Times Roman fonts, your system will complain that
+it cannot find times.sty. Read the commented note found at the top of this
+file for directions on where you can retrieve the Times Roman font package.
+
+Insert the title of your abstract as the argument of the ``title'' macro,
+just after the ``begin{document}'' macro.  Insert all author names and
+affiliation names in the ``author'' and ``affil'' commands.  You should
+list all the authors by institution, listing all the authors for the first
+institution, then that institution, then all the authors for the second
+institution, followed by the second institution, and so forth. If you
+cannot group all the authors by affiliation, you will have to repeat
+the affiliation for each separate occurrence. The example given in this
+file shows the correct way to enter authors and affiliations (be sure to
+remove all the samples when you prepare your abstract!). 
+
+If the abstract is more than one page, you will need a running head for the
+second page, abbreviating the title and author list as in the sample. 
+Remember that the length of your abstract cannot exceed the length requirement
+stated in the announcement text. If you
+do not input the correct information for YOUR running head, the one used
+in the sample will appear on the second page of your abstract.
+
+You should then type your abstract between the command lines
+``begin{abstracttext}'' and ``end{abstracttext}.'' Remember to remove
+ALL the sample text that currently exists between these two lines.
+
+After you run the LaTeX processor on your abstract, use dvips (or the dvi
+processor on your system) to produce a PostScript output file.  You will
+submit the PostScript file (and NOT the LaTeX file) to the LPI. (However,
+depending on which meeting your abstract is for, the LPI may request your
+source files separately.)
+
+You will notice that macros are not given for internal formatting (headings,
+etc.). The macros and style file merely define the page dimensions, format
+of title and author lines, two-column text format, and running head
+placement. Formatting of tables, equations, headings, captions, 
+references, etc., are at your discretion. Keep in mind that your text
+columns are only 3 inches (7.5 cm) wide, so plan the size of your tables, 
+equations, and figures accordingly.
+
+\end{abstracttext}
+
+\end{document}
+

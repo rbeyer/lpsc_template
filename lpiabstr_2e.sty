@@ -1,0 +1,228 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       lpiabstr_2e.sty                                                 %
+%                                                                       %
+% Purpose:                                                              %
+% Formatting for abstracts for LPI-sponsored meetings                   %
+%                                                                       %
+%  NOTE:  This style file has been written for the express              %
+%  purpose of formatting abstracts for LPI meetings, and                %
+%  may not be modified in any way.                                      %
+%                                                                       %
+% Author:                                                               %
+%       Norman Richert                                                  %
+% Date:                                                                 %
+%       October 1996                                                    %
+% Comments:                                                             %
+%       Based on art10.sty, with adjustments for 9pt type and two       %
+%       column format.  Incorporate a column balancing on the last      %
+%       (first or second) page of the abstract.                         %
+% Last Modified:                                                        %
+%                                                                       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                       %
+%       Material modified from art10.sty                                %
+%                                                                       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\font\timesrm=ptmr at 9pt
+\font\timesit=ptmri at 9pt
+\font\timesbf=ptmb at 9pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lineskip 1pt
+\normallineskip 1pt
+\def\baselinestretch{1}
+
+\renewcommand{\normalsize}{\fontsize{9pt}{11pt}\selectfont}
+\normalsize
+
+\renewcommand{\rm}{\timesrm}\rm
+\renewcommand{\it}{\timesit}
+\renewcommand{\bf}{\timesbf}
+
+
+\if@twoside
+   \oddsidemargin  44pt
+   \evensidemargin 82pt
+   \marginparwidth 107pt
+\else
+   \oddsidemargin  0pt
+   \evensidemargin 0pt
+   \marginparwidth 90pt
+\fi
+\marginparsep 11pt
+
+\topmargin 0pt
+\voffset-2pc
+
+\headheight 12pt
+\headsep 12pt
+\topskip = 9pt
+
+\footskip 30pt
+
+\textheight = 56.7\baselineskip
+\advance\textheight by \topskip
+\textwidth 39pc
+
+\columnsep2pc
+\columnseprule 0pt
+
+\footnotesep 6.65pt
+
+\skip\footins 9pt plus 4pt minus 2pt
+
+\floatsep 12pt plus 2pt minus 2pt
+
+\textfloatsep 20pt plus 2pt minus 4pt
+
+\intextsep 12pt plus 2pt minus 2pt
+
+\dblfloatsep 12pt plus 2pt minus 2pt
+
+\dbltextfloatsep 20pt plus 2pt minus 4pt
+
+\@fptop 0pt plus 1fil
+
+\@fpsep 8pt plus 2fil
+\@fpbot 0pt plus 1fil
+
+\@dblfptop 0pt plus 1fil
+
+\@dblfpsep 8pt plus 2fil
+\@dblfpbot 0pt plus 1fil
+
+\marginparpush 5pt
+
+\parskip 0pt plus 1pt
+
+\parindent 15pt
+
+\partopsep 2pt plus 1pt minus 1pt
+
+\@lowpenalty   51
+\@medpenalty  151
+\@highpenalty 301
+
+\@beginparpenalty -\@lowpenalty
+
+\@endparpenalty   -\@lowpenalty
+
+\@itempenalty     -\@lowpenalty
+
+\def\section{\@startsection {section}{1}{\z@}{-3.5ex plus-1ex minus
+    -.2ex}{2.3ex plus.2ex}{\reset@font\Large\bf}}
+\def\subsection{\@startsection{subsection}{2}{\z@}{-3.25ex plus-1ex
+    minus-.2ex}{1.5ex plus.2ex}{\reset@font\large\bf}}
+\def\subsubsection{\@startsection{subsubsection}{3}{\z@}{-3.25ex plus
+    -1ex minus-.2ex}{1.5ex plus.2ex}{\reset@font\normalsize\bf}}
+\def\paragraph{\@startsection
+     {paragraph}{4}{\z@}{3.25ex plus1ex minus.2ex}{-1em}{\reset@font
+     \normalsize\bf}}
+\def\subparagraph{\@startsection
+     {subparagraph}{4}{\parindent}{3.25ex plus1ex minus
+     .2ex}{-1em}{\reset@font\normalsize\bf}}
+
+\setcounter{secnumdepth}{3}
+
+\def\appendix{\par
+  \setcounter{section}{0}
+  \setcounter{subsection}{0}
+  \def\thesection{\Alph{section}}}
+
+\leftmargini 25pt
+\leftmarginii 22pt
+\leftmarginiii 18.7pt
+\leftmarginiv 17pt
+\leftmarginv 10pt
+\leftmarginvi 10pt
+
+\leftmargin\leftmargini
+\labelsep 5pt
+\labelwidth\leftmargini\advance\labelwidth-\labelsep
+
+\def\@listI{\leftmargin\leftmargini \parsep 4\p@ plus2\p@ minus\p@
+\topsep 8\p@ plus2\p@ minus4\p@
+\itemsep 4\p@ plus2\p@ minus\p@}
+
+\let\@listi\@listI
+\@listi
+
+\def\@listii{\leftmargin\leftmarginii
+   \labelwidth\leftmarginii\advance\labelwidth-\labelsep
+   \topsep 4\p@ plus2\p@ minus\p@
+   \parsep 2\p@ plus\p@ minus\p@
+   \itemsep \parsep}
+
+\def\@listiii{\leftmargin\leftmarginiii
+    \labelwidth\leftmarginiii\advance\labelwidth-\labelsep
+    \topsep 2\p@ plus\p@ minus\p@
+    \parsep \z@ \partopsep \p@ plus\z@ minus\p@
+    \itemsep \topsep}
+
+\def\@listiv{\leftmargin\leftmarginiv
+     \labelwidth\leftmarginiv\advance\labelwidth-\labelsep}
+
+\def\@listv{\leftmargin\leftmarginv
+     \labelwidth\leftmarginv\advance\labelwidth-\labelsep}
+
+\def\@listvi{\leftmargin\leftmarginvi
+     \labelwidth\leftmarginvi\advance\labelwidth-\labelsep}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                       %
+%       Headings                                                        %
+%                                                                       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\ps@headings{\let\@mkboth\markboth
+  \def\@oddfoot{}\def\@evenfoot{}%     No feet.
+  \def\@oddhead{\hfil\rightmark\hfil}% Heading.
+  \def\sectionmark##1{\markright {\uppercase{\ifnum \c@secnumdepth >\z@
+    \thesection\hskip 1em\relax \fi ##1}}}}
+\def\ps@chapopen{\let\@mkboth\markboth\def\@oddhead{}
+   \def\@evenhead{}\def\@evenfoot{}\def\@oddfoot{}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                       %
+%       Title/author info.                                              %
+%                                                                       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\gdef\@author{}
+\gdef\@affil{}
+\newbox\authorbox
+\newif\iffirstauthor\firstauthortrue
+\def\author#1{\iffirstauthor\gdef\@author{#1}\firstauthorfalse
+  \else\xdef\@author{\@author, #1}\fi}
+\def\affil#1{\xdef\@author{\@author, {\timesit#1}}}
+\def\titlemake{\setbox\authorbox=\vbox{\noindent{\bf
+\uppercase\expandafter{\@title.}}
+  \rm\@author.\vspace{2pc}}%
+  \markboth{}{\rm\@runningtitle}}
+\def\@runningtitle{}
+\def\runningtitle#1{\gdef\@runningtitle{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                       %
+%       Main Body and Column Balancing                                  %
+%                                                                       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newbox\@leftcolumnsave\newbox\@rightcolumnsave
+\def\abstracttext{\twocolumn[\box\authorbox]\rm}
+\def\endabstracttext{\begingroup\output={\balancecolumns}\eject\endgroup}
+\def\balancecolumns{\setbox0=\vbox{\unvbox\@leftcolumn\unvbox\@cclv}
+  \dimen@=\ht0
+  \advance\dimen@ by\topskip \advance\dimen@ by-\baselineskip
+  \divide\dimen@ by2 \splittopskip=\topskip
+  {\vbadness=10000 \loop \global\setbox3=\copy0
+    \global\setbox1=\vsplit3 to\dimen@
+    \ifdim\ht3>\dimen@ \global\advance\dimen@ by1pt \repeat}
+  \global\setbox\@leftcolumn=\vbox to \@colroom{\unvbox1\vfill}%
+  \vbox to\dimen@{\unvbox3}
+  \if@firstcolumn \global\@firstcolumnfalse\fi%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                       %
+%       Parameters                                                      %
+%                                                                       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{headings}
+\textwidth39pc
+\columnsep2pc
+\thispagestyle{chapopen}
+\flushbottom
