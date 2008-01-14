@@ -1,7 +1,7 @@
 % This is an LPSC Abstract template for LaTeX 2e that is based off of the
 % LaTeX article document class.
 
-% Copyright (C) 2005 Ross A. Beyer
+% Copyright (C) 2005,2007 Ross A. Beyer
 
 % Use the LaTeX article class.  Pass any options you like to article, except
 % twocolumn.  We take care of that in the lpscabs pacakage below.
@@ -19,6 +19,12 @@
 \renewcommand{\bibsection}{\subsubsection*{\refname}}
 								% Make the References heading smaller.
 
+% To compress the section titles even more, use the titlesec package.
+%\usepackage[small,compact]{titlesec}
+
+\usepackage{paralist}
+								
+
 \usepackage{lpscabs}			% This is to take care of some LPSC abstract
 								% document-specific things and set sizes.
 
@@ -27,11 +33,11 @@
 % The \titlearea command takes two arguments in curly braces {}.  The first
 % will be used as the title, and the second as the author info.
 
-\titlearea{Using \LaTeX\ to write an LPSC Abstract.}{Ross A. Beyer, NASA Ames Research Center, MS 245-3, Moffett Field, CA, USA (rbeyer@arc.nasa.gov)}
+\titlearea{Using \LaTeX\ to write an LPSC Abstract.}{Ross A. Beyer, NASA Ames Research Center, MS 245-3, Moffett Field, CA, USA (Ross.A.Beyer@nasa.gov)}
 
 % Here is an example with more than one author from more than one place:
 %
-% \titlearea{Using \LaTeX\ to write an LPSC Abstract.}{Ross A. Beyer$^{1}$, John Q. Public$^{a}$, and Jane Doe$^{\dag}$, $^{1}$NASA Ames Research Center, MS 245-3, Moffett Field, CA, USA (rbeyer@arc.nasa.gov), $^{a}$123 Sesame Street, New York NY, USA, $^{\dag}$890 Somewhere, ID, USA}
+% \titlearea{Using \LaTeX\ to write an LPSC Abstract.}{Ross A. Beyer$^{1,2}$, John Q. Public$^{a}$, and Jane Doe$^{\dag}$, $^1$Carl Sagan Center at the SETI Institute, $^2$NASA Ames Research Center, MS 245-3, Moffett Field, CA, USA (Ross.A.Beyer@nasa.gov), $^{a}$123 Sesame Street, New York NY, USA, $^{\dag}$890 Somewhere, ID, USA}
 
 
 % If your abstract is two pages long, type your running head in the argument
@@ -39,7 +45,7 @@
 \runningtitle{\LaTeX\ and the LPSC Abstract, R. A. Beyer}
 
 There used to be a \LaTeX\ template and a style file for writing
-LPSC abstracts available on the LPSC's web site.  However, in the
+LPSC abstracts available on the LPSC Web site.  However, in the
 last couple of years, no such template has been available, and I
 found myself dragging the old one out.  It was full of scary \TeX\
 commands and had a date from 1996 in it, so I decided to start from
@@ -72,7 +78,7 @@ more than one affiliation.  So rather than try to program something
 that can be all things to all people, I'll just let you (the authors)
 do whatever you like to the text in that line.  I suppose it is a 
 little less convenient, but more flexible.  I have commented out
-a few multiple author styles up near that section of the source 
+a few multiple author styles up near that section of this source 
 file.
 
 \subsubsection*{Running title}
@@ -90,13 +96,26 @@ styling if you like, but I find that just using the \verb=\subsubsection*=
 command (as I have done in this example) works reasonably well, and
 you could even use the \verb=\paragraph= command if you wanted the
 section's title on the same line as the first sentence of the
-section, saving even more space.
+section, saving even more space.  You can also use the \verb=titlesec=
+package with the \verb=small= and \verb=compact= options to further
+compress the font size and space around titles.
+
 
 \subsubsection*{Figures}
 
 Good figures are hard to make, there's no question about it.  That
 goes double for deciding which figures to include in your 
 space-limited abstract.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=\columnwidth]{lb_fig1.png}
+\caption[Color Scales and Color-Deficient-Viewer Simulations]{
+    \label{color_scales}
+    This is Figure 1 from \citet{2004EOSTr..85..385L}.  
+    }
+\end{center}
+\end{figure}
 
 When you make the decision to create a color figure, take some time
 to think about the colors that you use.  I think that
@@ -106,19 +125,11 @@ Just because you decide to use color doesn't mean that you need to
 use \emph{all} of the colors.  Don't confuse ``pretty'' with
 ``meaningful''.
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=\columnwidth]{lb_fig1.eps}
-\caption[Color Scales and Color-Deficient-Viewer Simulations]{
-    \label{color_scales}
-    This is Figure 1 from \citet{2004EOSTr..85..385L}.  
-    }
-\end{center}
-\end{figure}
+If you need figures or tables to be the full width of the page, just use their starred versions, like \verb=\begin{figure*}= instead of \verb=\begin{figure}=.
 
 \subsubsection*{Works that you reference}
 
-Using natbib with the numbers option and the unsrtnat bibliographystle
+Using natbib with the numbers option and the unsrtnat bibliographystyle
 approximates the reference-style that has emerged for LPSC abstracts
 over the years, but there is no hard and fast rule.  You may think that
 the references take up too much vertical space (with each reference 
@@ -127,8 +138,10 @@ your own reference section, but if you really have that many references
 maybe you should be submitting this to a peer-reviewed journal and not
 just a conference.
 
+\begin{inparaenum}
 \bibliography{bibliography}
 \bibliographystyle{unsrtnat}
+\end{inparaenum}
 
 \end{document}
 
