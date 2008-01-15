@@ -8,6 +8,7 @@
 \documentclass[twoside]{article} 
 
 \usepackage{times}				% Nice fonts, optional
+\usepackage{url}                % Needed for wrapping long URLs
 
 \usepackage{graphicx}			% Nice graphics, optional
 
@@ -22,7 +23,7 @@
 % To compress the section titles even more, use the titlesec package.
 %\usepackage[small,compact]{titlesec}
 
-\usepackage{paralist}
+% \usepackage{paralist}			% For compressing bibliography into a paragraph
 								
 
 \usepackage{lpscabs}			% This is to take care of some LPSC abstract
@@ -33,7 +34,11 @@
 % The \titlearea command takes two arguments in curly braces {}.  The first
 % will be used as the title, and the second as the author info.
 
-\titlearea{Using \LaTeX\ to write an LPSC Abstract.}{Ross A. Beyer, NASA Ames Research Center, MS 245-3, Moffett Field, CA, USA (Ross.A.Beyer@nasa.gov)}
+\titlearea{Using \LaTeX\ to write an LPSC Abstract.}{Ross A. Beyer$^{1,2}$ and Moses P. Milazzo$^{3}$, $^1$Carl Sagan Center at the SETI Institute, $^2$NASA Ames Research Center, MS 245-3, Moffett Field, CA, USA (Ross.A.Beyer@nasa.gov), and $^3$The University of Arizona}
+
+% Here is an example with just one author:
+%
+%\titlearea{Using \LaTeX\ to write an LPSC Abstract.}{Ross A. Beyer, NASA Ames Research Center, MS 245-3, Moffett Field, CA, USA (Ross.A.Beyer@nasa.gov)}
 
 % Here is an example with more than one author from more than one place:
 %
@@ -42,15 +47,15 @@
 
 % If your abstract is two pages long, type your running head in the argument
 % below:
-\runningtitle{\LaTeX\ and the LPSC Abstract, R. A. Beyer}
+\runningtitle{\LaTeX\ and the LPSC Abstract, R. A. Beyer and M. P. Milazzo}
 
 There used to be a \LaTeX\ template and a style file for writing
 LPSC abstracts available on the LPSC Web site.  However, in the
-last couple of years, no such template has been available, and I
-found myself dragging the old one out.  It was full of scary \TeX\
-commands and had a date from 1996 in it, so I decided to start from
+last couple of years, no such template has been available, and we
+found ourselves dragging the old one out.  It was full of scary \TeX\
+commands and had a date from 1996 in it, so we decided to start from
 scratch and write a template based on \LaTeX's own article class and 
-a short \LaTeXe\ package file.  Most of my \LaTeX\ work is based on
+a short \LaTeXe\ package file.  Most of the \LaTeX\ work is based on
 \citet{latexguide}.
 
 Fortunately, the requirements for LPSC abstracts \citep{LPSC} are
@@ -58,28 +63,28 @@ reasonably relaxed.
 
 \subsubsection*{Title area}
 
-The title mechanism for this template is a simple command
-\verb=\titlearea= which takes two arguments, the title text and the
+The title mechanism for this template is a simple command,
+\verb=\titlearea=, which takes two arguments, the title text and the
 author info text.
 
 The title text is made a font size bigger and made boldface in the
 lpscabs package.  If you would like it styled differently, it should
-be easy to go in to the lpscabs.sty file and change it.
+be easy to go in to the \texttt{lpscabs.sty} file and change it.
 
 The old style file had a fancy automatic mechanism for entering
 authors and putting superscripted numbers on their names to match
-up with their affiliations later on in the title.  I contemplated
+up with their affiliations later on in the title.  We contemplated
 doing that and then realized that maybe authors would like some
 other mechanism besides numbers, maybe little letters, or any of
 the special characters like \dag\ or \ddag\ to mark their affiliations,
 or maybe all of the authors are from the same place, so no little
-super-scripted characters are needed.  Possibly some authors could have
-more than one affiliation.  So rather than try to program something
-that can be all things to all people, I'll just let you (the authors)
-do whatever you like to the text in that line.  I suppose it is a 
-little less convenient, but more flexible.  I have commented out
-a few multiple author styles up near that section of this source 
-file.
+super-scripted characters are needed.  Possibly some authors could
+have more than one affiliation.  So rather than try to program
+something that can be all things to all people, we'll just let you
+(the authors) do whatever you like to the text in that line, you're
+smart people.  It is a little less convenient, but we think it is more
+flexible.  We have commented out a few multiple author styles up
+near that section of this source file.
 
 \subsubsection*{Running title}
 
@@ -92,12 +97,12 @@ command to supply text that will be written there.
 In general, people try to put lots of information into their LPSC
 abstracts, and want to minimize the space being taken up by section
 headers.  You could redefine the sectioning commands to change their
-styling if you like, but I find that just using the \verb=\subsubsection*=
-command (as I have done in this example) works reasonably well, and
+styling if you like, or you could just use the \verb=\subsubsection*=
+command (as we have done in this example), and
 you could even use the \verb=\paragraph= command if you wanted the
 section's title on the same line as the first sentence of the
-section, saving even more space.  You can also use the \verb=titlesec=
-package with the \verb=small= and \verb=compact= options to further
+section, saving even more space.  You can also use the \texttt{titlesec}
+package with the \texttt{small} and \texttt{compact} options to further
 compress the font size and space around titles.
 
 
@@ -118,30 +123,34 @@ space-limited abstract.
 \end{figure}
 
 When you make the decision to create a color figure, take some time
-to think about the colors that you use.  I think that
+to think about the colors that you use.  We think that
 \citet{2004EOSTr..85..385L} make a good case for not using the
 typical rainbow-spectrum color scheme (e.g. Fig.~\ref{color_scales}).
 Just because you decide to use color doesn't mean that you need to
 use \emph{all} of the colors.  Don't confuse ``pretty'' with
-``meaningful''.
+``meaningful.''
 
-If you need figures or tables to be the full width of the page, just use their starred versions, like \verb=\begin{figure*}= instead of \verb=\begin{figure}=.
+If you need figures or tables to be the full width of the page,
+just use their starred versions, like \verb=\begin{figure*}= instead
+of \verb=\begin{figure}=.
 
 \subsubsection*{Works that you reference}
 
-Using natbib with the numbers option and the unsrtnat bibliographystyle
-approximates the reference-style that has emerged for LPSC abstracts
-over the years, but there is no hard and fast rule.  You may think that
-the references take up too much vertical space (with each reference 
-starting a new line).  You are welcome to not use natbib, and customize
-your own reference section, but if you really have that many references
-maybe you should be submitting this to a peer-reviewed journal and not
-just a conference.
+Using \texttt{natbib} with the \texttt{numbers} option and the
+\texttt{unsrtnat} bibliographystyle approximates the reference-style
+that has emerged for LPSC abstracts over the years, but there is
+no hard and fast rule.  You may think that the references take up
+too much vertical space (with each reference starting a new line).
+You can use the \texttt{paralist} package and enclose the bibliography
+stuff in a \texttt{inparaenum} environment.  Examples of how to do
+this are commented out in this source file.  However, if you really
+have that many references maybe you should be submitting this to a
+peer-reviewed journal and not just a conference.
 
-\begin{inparaenum}
+%\begin{inparaenum}
 \bibliography{bibliography}
 \bibliographystyle{unsrtnat}
-\end{inparaenum}
+%\end{inparaenum}
 
 \end{document}
 
