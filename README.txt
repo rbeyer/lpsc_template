@@ -29,8 +29,8 @@ LPI complains about your format (or rejects your abstract).
 
 Now, get back to work and write that abstract!
 
-Ross A. Beyer        Ross.A.Beyer@nasa.gov
-Moses P. Milazzo  mmilazzo@lpl.arizona.edu
+Ross A. Beyer            Ross.A.Beyer@nasa.gov
+Moses P. Milazzo      mmilazzo@lpl.arizona.edu
 
 
-Last modified 15 Jan 2008.
+Last modified 21 Jan 2008.
