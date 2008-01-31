@@ -1,4 +1,5 @@
 % This is a LaTeX 2e Class file for creating LPSC abstracts
+% $Id$
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{lpscabs}[2005/12/20 LPSC Abstract Class]
@@ -58,6 +59,8 @@
 \twocolumn[ {\textbf{\Large#1}} #2 ]
 }
 
+% The LPI doesn't recommend using a running title anymore, but this 
+% command is left in for historical reasons.
 \newcommand{\runningtitle}[1]{%
 \markboth{#1}{#1}
 }

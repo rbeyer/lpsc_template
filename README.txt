@@ -19,7 +19,7 @@ lpscabs.sty				The package file for setting things up, no modifications needed.
 
     WARNING! WARNING! WARNING!
 
-DISCLAIMER:  These files are in no way sanctioned or blessed by the
+DISCLAIMER:  These files are not commissioned or supported by the
 LPI.  We created it to make our own lives easier, and figured that
 other folks might benefit from it.  This template is no substitute
 for reading the appropriate style and formatting guides provided
