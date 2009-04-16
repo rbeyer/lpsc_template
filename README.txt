@@ -1,7 +1,8 @@
-This is a LaTeX 2e version of the of a LaTeX template for LPSC.
-This directory contains example files and some of the original files
-distributed by the LPI.  The template file uses several pacakages,
-but most LaTeX distributions should have these packages already.
+This is a LaTeX 2e version of the of a LaTeX template for LPSC and
+other LPI meetings.  This directory contains example files and some
+of the original files distributed by the LPI.  The template file
+uses several pacakages, but most LaTeX distributions should have
+these packages already.
 
 Details about how to use the template can be found in the text of
 the template file.  There is both a PNG and EPS version of the
@@ -29,8 +30,8 @@ LPI complains about your format (or rejects your abstract).
 
 Now, get back to work and write that abstract!
 
-Ross A. Beyer            Ross.A.Beyer@nasa.gov
-Moses P. Milazzo      mmilazzo@lpl.arizona.edu
+Ross A. Beyer        Ross.A.Beyer@nasa.gov
+Moses P. Milazzo            moses@usgs.gov
 
 Last modified on 
 $Date$

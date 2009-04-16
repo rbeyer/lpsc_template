@@ -40,12 +40,15 @@
 \usepackage{lpscabs}			% This is to take care of some LPSC abstract
 								% document-specific things and set sizes.
 
+\usepackage[pdftex,colorlinks=true,urlcolor=blue,citecolor=black,linkcolor=black]{hyperref}
+								% Puts actual hyperlinks in your PDF, optional.
+
 \begin{document}
 
 % The \titlearea command takes two arguments in curly braces {}.  The first
 % will be used as the title, and the second as the author info.
 
-\titlearea{Using \LaTeX\ to write an LPSC Abstract.}{Ross A. Beyer$^{1,2}$ and Moses P. Milazzo$^{3}$, $^1$Carl Sagan Center at the SETI Institute, $^2$NASA Ames Research Center, MS 245-3, Moffett Field, CA, USA (Ross.A.Beyer@nasa.gov), and $^3$The University of Arizona}
+\titlearea{Using \LaTeX\ to write an LPSC Abstract.}{Ross A. Beyer$^{1,2}$ and Moses P. Milazzo$^{3}$, $^1$Carl Sagan Center at the SETI Institute, $^2$NASA Ames Research Center, MS 245-3, Moffett Field, CA, USA (\href{mailto:Ross.A.Beyer@nasa.gov}{Ross.A.Beyer@nasa.gov}), and $^3$Astrogeology Branch, United States Geological Survey}
 
 % Here is an example with just one author:
 %
@@ -69,11 +72,12 @@ on the LPSC Web site.  However, in the last couple of years, no
 such template has been available, and we found ourselves dragging
 the old one out.  It was full of scary \TeX\ commands and had a
 date from 1996 in it, so we decided to start from scratch and write
-a template based on \LaTeX's own article class and a short \LaTeXe\
+a \href{http://rossbeyer.net/software/lpsc_template/}{template} based 
+on \LaTeX's own article class and a short \LaTeXe\
 package file.  Most of the \LaTeX\ work is based on \citet{latexguide}.
 
-Fortunately, the requirements for LPSC abstracts \citep{LPSC} are
-reasonably relaxed.
+Fortunately, the requirements for LPI-sponsored meeting abstracts (like LPSC)
+are reasonably relaxed.
 
 \subsubsection*{Title area}
 
@@ -150,6 +154,44 @@ If you need figures or tables to be the full width of the page,
 just use their starred versions, like \verb=\begin{figure*}= instead
 of \verb=\begin{figure}=.
 
+\subsubsection*{URLs and hyperlinks}
+
+Let's face it, the odds are good that more people will read this
+abstract on their computer screens via a PDF reader than will do
+so on paper.  Fortunately, PDFs can contain active hyperlinks that
+can fire off a Web browser, or your e-mail client, and the
+\verb=hyperref= package helps you do this.  It is used in this
+example file, and there are blue links that you can click on in
+this document, try them out.
+
+The \verb=hyperref= package has some options that we should probably 
+detail.  Here's a copy of the command in this document (carriage returns 
+included for clarity):
+
+\begin{verbatim}
+\usepackage[pdftex,colorlinks=true,
+  urlcolor=blue,citecolor=black,
+  linkcolor=black]{hyperref}
+\end{verbatim}
+\noindent
+The options in the square brackets are important, and
+\url{http://www.tug.org/applications/hyperref/manual.html} details
+all of them.  The first item \verb=pdftex= is because we mostly use
+\verb=pdflatex= to create PDF files from our \verb=.tex= files.  If
+you use \verb=ps2pdf=, or something else, you'll want to specify
+something else here.  The \verb=colorlinks= and \verb=urlcolor=
+options should be reasonably self-explanatory, but you may wonder
+why we set \verb=citecolor= and \verb=linkcolor= to black.  The
+\verb=hyperref= package is good, it actually creates links for all
+kinds of things in the document, and gives them unique link colors.
+However, in this short document, that's kind of overkill, and a
+little visually distracting.  So the links are still there, its
+just that the text is black.  So go ahead and click on the references
+numbers, like this one: \citep{latexguide} (which won't do much since
+the references are on this page), or figure numbers like
+this: \ref{color_scales}, and you'll get hopped to the right page.
+
+
 \subsubsection*{Copyright Information}
 
 This work is licensed under the Creative Commons
@@ -174,7 +216,7 @@ request that derivative templates credit us, but also allow for
 \emph{anyone} to make derivative works, in addition to a few other
 rights and restrictions.  If you want to know more, visit the
 Creative Commons web site.  You may even want to check out the
-Science Commons at \url{http://science.creativecommons.org/}.
+Science Commons at \url{http://sciencecommons.org/}.
 
 
 \subsubsection*{Works that you reference}
