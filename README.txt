@@ -16,6 +16,7 @@ lb_fig1.eps				Sample figure, EPS format
 lb_fig1.png				Sample figure, PNG format
 lpsc_abstract.tex		The template file.  Modify this with your own abstract.
 lpscabs.sty				The package file for setting things up, no modifications needed.
+unsrtetal.bst			A BibTeX .bst file that functions like unsrtnat, but shortens long author lists.
 
 
     WARNING! WARNING! WARNING!
