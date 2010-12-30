@@ -36,3 +36,16 @@ Moses P. Milazzo            moses@usgs.gov
 
 Last modified on 
 $Date$
+
+
+Changelog:
+
+Release 1.2, Dec 2010
+- Updated with hyperref examples (clickable URLs etc.)
+- Added unsrtetal.bst, which converts the references to 
+	'Author1 et al.' when needed to keep the bibliography short.
+
+Release 1.1, Jan 2008
+- Just updated information with comments from the LPI
+
+Release 1.0, Jan 2008
