@@ -10,13 +10,13 @@ figure depending on if you use pdflatex or latex, dvips, and ps2pdf.
 
 Files:
 
-Makefile                example GNU make file for use with the latex-mk system, optional
-bibliography.bib        Sample bibliography file
-lb_fig1.eps				Sample figure, EPS format
-lb_fig1.png				Sample figure, PNG format
-lpsc_abstract.tex		The template file.  Modify this with your own abstract.
-lpscabs.sty				The package file for setting things up, no modifications needed.
-unsrtetal.bst			A BibTeX .bst file that functions like unsrtnat, but shortens long author lists.
+Makefile           example GNU make file for use with the latex-mk system, optional
+bibliography.bib   Sample bibliography file
+lb_fig1.eps        Sample figure, EPS format
+lb_fig1.png        Sample figure, PNG format
+lpsc_abstract.tex  The template file.  Modify this with your own abstract.
+lpscabs.sty        The package file for setting things up, no modifications needed.
+unsrtetal.bst      A BibTeX .bst file that functions like unsrtnat, but shortens long author lists.
 
 
     WARNING! WARNING! WARNING!
@@ -39,6 +39,9 @@ $Date$
 
 
 Changelog:
+
+Release 1.3, Jul 2011
+- The \newcommand that set the bibliography font size needed to be changed to a \renewcommand.
 
 Release 1.2, Dec 2010
 - Updated with hyperref examples (clickable URLs etc.)
