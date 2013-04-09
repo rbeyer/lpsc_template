@@ -41,7 +41,9 @@ $Date$
 Changelog:
 
 Release 1.3, Jul 2011
-- The \newcommand that set the bibliography font size needed to be changed to a \renewcommand.
+- The \newcommand that set the bibliography font size needed to be 
+	changed to a \renewcommand.  Thanks to Joseph Paul Cohen.
+
 
 Release 1.2, Dec 2010
 - Updated with hyperref examples (clickable URLs etc.)
