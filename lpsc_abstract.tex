@@ -30,7 +30,7 @@
 								% Make the References heading smaller.
 
 % To compress the section titles even more, use the titlesec package.
-%\usepackage[small,compact]{titlesec}
+\usepackage[small,compact]{titlesec}
 
 % \usepackage{paralist}			% For compressing bibliography into a paragraph
 
@@ -48,7 +48,7 @@
 % The \titlearea command takes two arguments in curly braces {}.  The first
 % will be used as the title, and the second as the author info.
 
-\titlearea{Using \LaTeX\ to write an LPSC Abstract.}{Ross A. Beyer$^{1,2}$ and Moses P. Milazzo$^{3}$, $^1$Carl Sagan Center at the SETI Institute, $^2$NASA Ames Research Center, MS 245-3, Moffett Field, CA, USA (\href{mailto:Ross.A.Beyer@nasa.gov}{Ross.A.Beyer@nasa.gov}), and $^3$Astrogeology Branch, United States Geological Survey}
+\titlearea{Using \LaTeX\ to write an LPSC Abstract.}{Ross A. Beyer$^{1,2}$ and Moses P. Milazzo$^{3}$, $^1$Carl Sagan Center at the SETI Institute, $^2$NASA Ames Research Center, MS 245-3, Moffett Field, CA, USA (\href{mailto:Ross.A.Beyer@nasa.gov}{Ross.A.Beyer@nasa.gov}), and $^3$Astrogeology Science Center, United States Geological Survey}
 
 % Here is an example with just one author:
 %
@@ -58,28 +58,23 @@
 %
 % \titlearea{Using \LaTeX\ to write an LPSC Abstract.}{Ross A. Beyer$^{1,2}$, John Q. Public$^{a}$, and Jane Doe$^{\dag}$, $^1$Carl Sagan Center at the SETI Institute, $^2$NASA Ames Research Center, MS 245-3, Moffett Field, CA, USA (Ross.A.Beyer@nasa.gov), $^{a}$123 Sesame Street, New York NY, USA, $^{\dag}$890 Somewhere, ID, USA}
 
-% The LPI no longer recommends using a running title.
-% % If your abstract is two pages long, type your running head in the argument
-% % below:
-% \runningtitle{\LaTeX\ and the LPSC Abstract, R. A. Beyer and M. P. Milazzo}
-
 % Uncomment \usepackage{balance} above to use this:
 % \balance
 
 There used to be a \LaTeX\ template and a style file for writing
 Lunar and Planetary Science Conference (LPSC) abstracts available
-on the LPSC Web site.  However, in the last couple of years, no
-such template has been available, and we found ourselves dragging
-the old one out.  It was full of scary \TeX\ commands and had a
-date from 1996 in it, so we decided to start from scratch and write
-a \href{http://rossbeyer.net/software/lpsc_template/}{template} based 
-on \LaTeX's own article class and a short \LaTeXe\
-package file.  Most of the \LaTeX\ work is based on \citet{latexguide}.
+on the LPSC Web site.  However, no such template has been available
+for some time, and we found ourselves dragging the old one out.  It
+was full of scary \TeX\ commands and had a date from 1996 in it,
+so we decided to start from scratch and write a
+\href{http://rossbeyer.net/software/lpsc_template/}{template} based
+on \LaTeX's own article class and a short \LaTeXe\ package file.
+Most of the \LaTeX\ work is based on \citet{latexguide}.
 
 Fortunately, the requirements for LPI-sponsored meeting abstracts (like LPSC)
-are reasonably relaxed.
+are reasonably relaxed \citep{LPSC}.
 
-\subsubsection*{Title area}
+\paragraph{Title area:}
 
 The title mechanism for this template is a simple command,
 \verb=\titlearea=, which takes two arguments, the title text and the
@@ -104,29 +99,18 @@ smart people.  It is a little less convenient, but we think it is more
 flexible.  We have commented out a few multiple author styles up
 near that section of this source file.
 
-% The LPI no longer recommends using a running title, since they 
-% actually add a header to both pages of the PDF these days.
-% \subsubsection*{Running title}
-% 
-% If your abstract is two pages, and you'd like to have a snappy little
-% header on the second page, then you can use the \verb=\runningtitle=
-% command to supply text that will be written there.
-
-\subsubsection*{Section styles}
+\paragraph{Section styles:}
 
 In general, people try to put lots of information into their LPSC
 abstracts, and want to minimize the space being taken up by section
 headers.  You could redefine the sectioning commands to change their
-styling if you like, or you could just use the \verb=\subsubsection*=
-command (as we have done in this example), and
-you could even use the \verb=\paragraph= command if you wanted the
-section's title on the same line as the first sentence of the
-section, saving even more space.  You can also use the \texttt{titlesec}
-package with the \texttt{small} and \texttt{compact} options to further
-compress the font size and space around titles.
+styling if you like, or you could just use the \verb=\paragraph=
+command (as we have done in this example).  You can also use the
+\texttt{titlesec} package with the \texttt{small} and \texttt{compact}
+options to further compress the font size and space around titles.
 
 
-\subsubsection*{Figures}
+\paragraph{Figures:}
 
 \begin{figure}
 \begin{center}
@@ -143,18 +127,30 @@ goes double for deciding which figures to include in your
 space-limited abstract.
 
 When you make the decision to create a color figure, take some time
-to think about the colors that you use.  We think that
-\citet{2004EOSTr..85..385L} make a good case for not using the
+to think about the colors that you use.  We think that a 
+strong case has been made \citep{2004EOSTr..85..385L,borland2007rainbow} for not using the
 typical rainbow-spectrum color scheme (e.g. Fig.~\ref{color_scales}).
 Just because you decide to use color doesn't mean that you need to
 use \emph{all} of the colors.  Don't confuse ``pretty'' with
 ``meaningful.''
 
+A strong suggestion by \citep{green2011colour} is that color schemes
+should be perceived as monotonically increasing (or decreasing)
+when used to display intensity maps of various sorts (such as
+topography, etc.). This generally is not the case for most rainbow
+color schemes. A monotonically increasing color scheme also looks
+correct whether printed in color or grayscale.
+
 If you need figures or tables to be the full width of the page,
 just use their starred versions, like \verb=\begin{figure*}= instead
-of \verb=\begin{figure}=.
+of \verb=\begin{figure}=.  If you have problems with double-column-wide
+floats, you may need to monkey with the \verb=\dbltopfraction=
+setting or other style parameters for floats (either in the
+\texttt{lpscabs.sty} file or simply via
+\verb=\renewcommand{\dbltopfraction}{}= in your abstract \texttt{.tex}
+file).
 
-\subsubsection*{URLs and hyperlinks}
+\paragraph{URLs and hyperlinks:}
 
 Let's face it, the odds are good that more people will read this
 abstract on their computer screens via a PDF reader than will do
@@ -167,7 +163,6 @@ this document, try them out.
 The \verb=hyperref= package has some options that we should probably 
 detail.  Here's a copy of the command in this document (carriage returns 
 included for clarity):
-
 \begin{verbatim}
 \usepackage[pdftex,colorlinks=true,
   urlcolor=blue,citecolor=black,
@@ -192,13 +187,11 @@ the references are on this page), or figure numbers like
 this: \ref{color_scales}, and you'll get hopped to the right page.
 
 
-\subsubsection*{Copyright Information}
+\paragraph{Copyright Information:}
 
 This work is licensed under the Creative Commons
-Attribution-Noncommercial-Share Alike 3.0 License. To view a copy
-of this license, visit \url{http://creativecommons.org/licenses/by-nc-sa/3.0/};
-or, (b) send a letter to Creative Commons, 171 2nd Street, Suite
-300, San Francisco, California, 94105, USA.
+Attribution-Noncommercial-Share Alike License. To view a copy
+of this license, visit \url{https://creativecommons.org/licenses/by-nc-sa/4.0/}.
 
 Does this mean that if you write an abstract using this template that
 you are required by law to credit us and to release the paper under
@@ -215,36 +208,36 @@ the Creative Commons license above allows us to retain copyright,
 request that derivative templates credit us, but also allow for
 \emph{anyone} to make derivative works, in addition to a few other
 rights and restrictions.  If you want to know more, visit the
-Creative Commons web site.  You may even want to check out the
-Science Commons at \url{http://sciencecommons.org/}.
+Creative Commons web site at \url{http://creativecommons.org/science}.
 
 
-\subsubsection*{Works that you reference}
+\paragraph{Works that you reference:}
 
 Using \texttt{natbib} with the \texttt{numbers} option and the
 \texttt{unsrtnat} bibliographystyle approximates the reference-style
 that has emerged for LPSC abstracts over the years, but there is
-no hard and fast rule.  You may think that the references take up
-too much vertical space (with each reference starting a new line).
-You can use the \texttt{paralist} package and enclose the bibliography
-stuff in a \texttt{inparaenum} environment (which is itself enclosed
-in a \texttt{flushleft} environment).  Examples of how to do this
-are commented out in this source file.  Of course, you don't have to 
-use \texttt{natbib}, if you don't want to.  However, if you really have
-that many references maybe you should be submitting this to a
-peer-reviewed journal and not just a conference.
+no hard and fast rule.  Others have used \emph{Science}'s
+\texttt{science.bst} style. You may think that the references take
+up too much vertical space (with each reference starting a new
+line).  You can use the \texttt{paralist} package and enclose the
+bibliography stuff in a \texttt{inparaenum} environment (which is
+itself enclosed in a \texttt{flushleft} environment).  Examples of
+how to do this are commented out in this source file.  Of course,
+you don't have to use \texttt{natbib}, if you don't want to.  However,
+if you really have that many references maybe you should be submitting
+this to a peer-reviewed journal and not just a conference.
 
 % Uncomment \usepackage{paralist} above to use the inparaenum environment.
-% \begin{flushleft}
-% \begin{inparaenum}
+%\begin{flushleft}
+%\begin{inparaenum}
 \bibliography{bibliography}
 \bibliographystyle{unsrtnat}
 %% Your References section ridiculously long?  
 %% Maybe try the unsrtetal .bst file included with this template, although
 %% I haven't figured out how to make \citet commands work with it.
 %% \bibliographystyle{unsrtetal}
-% \end{inparaenum}
-% \end{flushleft}
+%\end{inparaenum}
+%\end{flushleft}
 
 \end{document}
 

@@ -40,6 +40,13 @@ $Date$
 
 Changelog:
 
+Release 1.4, Jan 2016
+- Minor modification to make things consistent with the current style 
+	of the LPI template.
+- Added some additional preaching about color schemes.
+- Added some information about dealing with double-wide-floats and
+    the science.bst file.  Thanks to Lucy Lim.
+
 Release 1.3, Jul 2011
 - The \newcommand that set the bibliography font size needed to be 
 	changed to a \renewcommand.  Thanks to Joseph Paul Cohen.

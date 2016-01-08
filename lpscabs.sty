@@ -19,7 +19,7 @@
 %%---------------------------- Global Settings ------------------------
 
 %% Page Style to put numbers at the top.
-\pagestyle{myheadings}
+\pagestyle{empty}
 
 \setlength{\topmargin}{0in}         % = 1in because LaTeX adds 1in
 \setlength{\topskip}{12pt}          % This is the height of the text.
@@ -57,10 +57,4 @@
 \newcommand{\titlearea}[2]{%
 \thispagestyle{empty}
 \twocolumn[ {\textbf{\Large#1}} #2 ]
-}
-
-% The LPI doesn't recommend using a running title anymore, but this 
-% command is left in for historical reasons.
-\newcommand{\runningtitle}[1]{%
-\markboth{#1}{#1}
 }
