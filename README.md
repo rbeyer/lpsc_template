@@ -9,8 +9,8 @@ Details about how to use the template can be found in the text of
 the template file.  There is both a PNG and EPS version of the
 figure depending on if you use pdflatex or latex, dvips, and ps2pdf.
 
-Files:
-
+| File               | Description                                                                      |
+| ----               | -----------
 | Makefile           | example GNU make file for use with the latex-mk system, optional                 |
 | bibliography.bib   | Sample bibliography file                                                         |
 | lb_fig1.eps        | Sample figure, EPS format                                                        |
