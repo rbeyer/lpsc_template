@@ -1,7 +1,7 @@
 % This is an LPSC Abstract template for LaTeX 2e that is based off of the
 % LaTeX article document class.
 
-% $Id$
+% $Id: lpsc_abstract.tex 22 2016-01-08 00:28:19Z rbeyer $
 
 % Copyright (C) 2005,2007 Ross A. Beyer
 % Copyright (C) 2008 Ross A. Beyer and Moses P. Milazzo
@@ -21,18 +21,27 @@
 
 \usepackage{graphicx}			% Nice graphics, optional
 
-\usepackage[numbers]{natbib}	% Nice references, optional
-% These next three commands are relevant to natbib.  If you don't use
-% natbib for your references, you should get rid of these, as well.
-\renewcommand{\bibfont}{\small}	% Change the font size of the bibliography
-\setlength{\bibsep}{0pt}		% Remove the spacing between bib entries
-\renewcommand{\bibsection}{\subsubsection*{\refname}}
-								% Make the References heading smaller.
+% To use Biber:
+\usepackage[backend=biber,style=numeric,natbib=true,sorting=none]{biblatex}
+\addbibresource{bibliography.bib}
+\defbibheading{bibliography}[\refname]{\paragraph{#1:}}
+\defbibenvironment{bibliography}{\inparaenum[ {[}\printfield{labelnumber}{]}]}{\endinparaenum}{\textbf{\item}}
+
+% To use Bibtex:
+% \usepackage[numbers]{natbib}	% Nice references, optional
+% % These next three commands are relevant to natbib.  If you don't use
+% % natbib for your references, you should get rid of these, as well.
+% \renewcommand{\bibfont}{\small}	% Change the font size of the bibliography
+% \setlength{\bibsep}{0pt}		% Remove the spacing between bib entries
+% \renewcommand{\bibsection}{\subsubsection*{\refname}}
+% 								% Make the References heading smaller.
+
+
 
 % To compress the section titles even more, use the titlesec package.
 \usepackage[small,compact]{titlesec}
 
-% \usepackage{paralist}			% For compressing bibliography into a paragraph
+\usepackage{paralist}			% For compressing bibliography into a paragraph
 
 % \usepackage{balance}			% For balancing columns on the page.
 								
@@ -230,8 +239,14 @@ this to a peer-reviewed journal and not just a conference.
 % Uncomment \usepackage{paralist} above to use the inparaenum environment.
 %\begin{flushleft}
 %\begin{inparaenum}
-\bibliography{bibliography}
-\bibliographystyle{unsrtnat}
+
+% To use Biber:
+\printbibliography
+
+% To use Bibtex:
+%\bibliography{bibliography}
+%\bibliographystyle{unsrtnat}
+
 %% Your References section ridiculously long?  
 %% Maybe try the unsrtetal .bst file included with this template, although
 %% I haven't figured out how to make \citet commands work with it.

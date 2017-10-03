@@ -1,6 +1,7 @@
+# LPSC LaTeX Abstract Template
+
 This is a LaTeX 2e version of the of a LaTeX template for LPSC and
-other LPI meetings.  This directory contains example files and some
-of the original files distributed by the LPI.  The template file
+other LPI meetings.  This directory contains example files.  The template file
 uses several pacakages, but most LaTeX distributions should have
 these packages already.
 
@@ -19,7 +20,7 @@ lpscabs.sty        The package file for setting things up, no modifications need
 unsrtetal.bst      A BibTeX .bst file that functions like unsrtnat, but shortens long author lists.
 
 
-    WARNING! WARNING! WARNING!
+## WARNING! WARNING! WARNING!
 
 DISCLAIMER:  These files are not commissioned or supported by the
 LPI.  We created it to make our own lives easier, and figured that
@@ -34,11 +35,14 @@ Now, get back to work and write that abstract!
 Ross A. Beyer        Ross.A.Beyer@nasa.gov
 Moses P. Milazzo            moses@usgs.gov
 
-Last modified on 
-$Date$
 
 
-Changelog:
+## Changelog
+
+Oct 2017
+- The 'releases' below are from back in the SVN days, so this is the last one of these:
+- Put in examples that use biber (which is better at making LPSC-style, compact 
+	numbered reference paragraphs), and commented out the Bibtex stuff.
 
 Release 1.4, Jan 2016
 - Minor modification to make things consistent with the current style 
