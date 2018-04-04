@@ -39,6 +39,11 @@ Moses P. Milazzo (moses@usgs.gov)
 
 ## Changelog
 
+Apr 2018
+- Discovered that the old margin handling was leaving too much margin at the top of the page because
+	those LaTeX commands are confusing, have updated to use the geometry package, which is easier to
+	control and produces better results.
+
 Oct 2017
 - The 'releases' below are from back in the SVN days, so this is the last one of these:
 - Put in examples that use biber (which is better at making LPSC-style, compact 

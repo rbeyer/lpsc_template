@@ -16,8 +16,10 @@
 % twocolumn.  We take care of that in the lpscabs pacakage below.
 \documentclass[twoside]{article} 
 
-\usepackage{times}				% Nice fonts, optional
-\usepackage{url}                % Needed for wrapping long URLs
+\usepackage[margin=1in]{geometry}	% Sets margins cleanly
+\usepackage{times}					% Nice fonts, optional
+\usepackage{url}                	% Needed for wrapping long URLs
+
 
 \usepackage{graphicx}			% Nice graphics, optional
 
@@ -76,7 +78,7 @@ on the LPSC Web site.  However, no such template has been available
 for some time, and we found ourselves dragging the old one out.  It
 was full of scary \TeX\ commands and had a date from 1996 in it,
 so we decided to start from scratch and write a
-\href{http://rossbeyer.net/software/lpsc_template/}{template} based
+\href{https://github.com/rbeyer/lpsc_template}{template} based
 on \LaTeX's own article class and a short \LaTeXe\ package file.
 Most of the \LaTeX\ work is based on \citet{latexguide}.
 
