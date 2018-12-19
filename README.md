@@ -11,7 +11,7 @@ figure depending on if you use pdflatex or latex, dvips, and ps2pdf.
 
 | File               | Description                                                                      |
 | ----               | -----------
-| Makefile           | example GNU make file for use with the latex-mk system, optional                 |
+| Makefile           | example GNU make file for use with the latexmk system, optional                 |
 | bibliography.bib   | Sample bibliography file                                                         |
 | lb_fig1.eps        | Sample figure, EPS format                                                        |
 | lb_fig1.png        | Sample figure, PNG format                                                        |

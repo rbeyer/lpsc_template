@@ -1,12 +1,16 @@
-# GNU Makefile for LaTeX stuff using the latex-mk system
-# 					(http://latex-mk.sourceforge.net/).
-#
-# Ross Beyer	
-#
+# Just a simple Makefile wrapper around latexmk, 
+# simply because my hands are so used to typing 'make'
 
-NAME = lpsc_abstract
-USE_PDFLATEX = YES
-VIEWPDF = open
+all: abs
 
-# include /usr/local/share/latex-mk/latex.gmk
-include /opt/macports/share/latex-mk/latex.gmk
+.PHONY: abs
+abs:
+	latexmk
+
+.PHONY: clean
+clean:
+	latexmk -c
+
+.PHONY: realclean
+realclean:
+	latexmk -C
