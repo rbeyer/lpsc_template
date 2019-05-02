@@ -1,16 +1,26 @@
 # Just a simple Makefile wrapper around latexmk, 
 # simply because my hands are so used to typing 'make'
 
+ABS = lpsc_abstract.pdf
+COMPRESSED = $(addsuffix _compressed.pdf, $(basename $(ABS)))
+
+.PHONY: abs compress clean realclean 
 all: abs
 
-.PHONY: abs
+%.pdf: %.tex
+	latexmk $<
+
+$(COMPRESSED): $(ABS)
+	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$@ $<
+
 abs:
 	latexmk
 
-.PHONY: clean
+compress: $(COMPRESSED)
+
 clean:
 	latexmk -c
 
-.PHONY: realclean
 realclean:
 	latexmk -C
+	-@rm -f $(COMPRESSED)
