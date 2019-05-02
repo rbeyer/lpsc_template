@@ -2,7 +2,8 @@
 # simply because my hands are so used to typing 'make'
 
 ABS = lpsc_abstract.pdf
-COMPRESSED = $(addsuffix _compressed.pdf, $(basename $(ABS)))
+COMPRESSED_SUFFIX = _compressed.pdf
+COMPRESSED = $(addsuffix $(COMPRESSED_SUFFIX), $(basename $(ABS)))
 
 .PHONY: abs compress clean realclean 
 all: abs
@@ -10,7 +11,7 @@ all: abs
 %.pdf: %.tex
 	latexmk $<
 
-$(COMPRESSED): $(ABS)
+%$(COMPRESSED_SUFFIX): %.pdf
 	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$@ $<
 
 abs:
