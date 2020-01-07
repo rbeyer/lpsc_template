@@ -1,10 +1,9 @@
 % This is a LaTeX 2e Class file for creating LPSC abstracts
-% $Id$
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{lpscabs}[2005/12/20 LPSC Abstract Class]
 
-% Copyright (C) 2005,2007,2008 Ross A. Beyer
+% Copyright (C) 2005,2007,2008,2020 Ross A. Beyer
 
 % This work is licensed under the Creative Commons
 % Attribution-Noncommercial-Share Alike 3.0 License. To view a copy
@@ -18,18 +17,8 @@
 
 %%---------------------------- Global Settings ------------------------
 
-%% Page Style to put numbers at the top.
+%% Page Style to clear out any headers and footers:
 \pagestyle{empty}
-
-% Commenting these out and using the geometry package in the .tex file to set margins.
-% \setlength{\topmargin}{0in}         % = 1in because LaTeX adds 1in
-% \setlength{\topskip}{12pt}          % This is the height of the text.
-% 
-% \setlength{\oddsidemargin}{0in}   	% = 1.5in because LaTeX adds 1in
-% \setlength{\evensidemargin}{0in}    % = 1in because LaTeX adds 1in
-% 
-% \setlength{\textheight}{8.5in}
-% \setlength{\textwidth}{6.5in}
 
 \setlength{\columnsep}{18pt}
 
@@ -51,11 +40,43 @@
 % N.B.: floatpagefraction MUST be less than topfraction !!
 \renewcommand{\dblfloatpagefraction}{0.99}   % require fuller float pages
 
-%%---------------------------- Commands ----------------
+%%----------- Title and Author Commands ----------------
 %%
-%% We need to create some commands that the LPSC template will use
 
+%% These are two options for creating the title and author list, use
+%% one option, but not both!
+
+%% This is the original command, and allows the user complete control
+%% over what gets printed in these places.
 \newcommand{\titlearea}[2]{%
 \thispagestyle{empty}
 \twocolumn[ {\textbf{\uppercase{#1}}} #2 \vspace{24pt}]
 }
+
+%% These are to support the use of the authblk pacakge.
+%%
+%% To use these commands a user must:
+%% \usepackage{authblk}
+%%                      in their .tex file before \usepackage{lpscabs}
+%%
+%% These commands allow
+%% the user to use \title \author[1]{Author 1} \affil[1]{Affil 1}
+%% and then \maketitle to create title and author block.  For long author
+%% lists letting the authblk package help manaage affiliations
+%% can be a little cleaner.
+%%
+%% I couldn't figure out how to make
+%% the \uppercase flow through, so if you want the title uppercased,
+%% you have to do it when you specify \title{\uppercase{}} in the
+%% abstract .tex file, sorry.
+\renewcommand{\AB@affilsepx}{, }
+\renewcommand{\@author}{\ifx\AB@affillist\AB@empty\AB@author\else
+      \ifnum\value{affil}>\value{Maxaffil}\def\rlap##1{##1}%
+    \AB@authlist. \AB@affillist
+    \else  \AB@authors\fi\fi}
+
+\renewcommand{\maketitle}{%
+\thispagestyle{empty}
+\twocolumn[\textbf{\@title} \@author \vspace{24pt}]
+}
+

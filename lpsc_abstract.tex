@@ -1,10 +1,9 @@
 % This is an LPSC Abstract template for LaTeX 2e that is based off of the
 % LaTeX article document class.
 
-% $Id: lpsc_abstract.tex 22 2016-01-08 00:28:19Z rbeyer $
-
 % Copyright (C) 2005,2007 Ross A. Beyer
 % Copyright (C) 2008 Ross A. Beyer and Moses P. Milazzo
+% % Copyright (C) 2020 Ross A. Beyer
 
 % This work is licensed under the Creative Commons
 % Attribution-Noncommercial-Share Alike 3.0 License. To view a copy
@@ -25,6 +24,8 @@
 
 % To use Biber:
 \usepackage[backend=biber,style=numeric,natbib=true,sorting=none]{biblatex}
+% you may want to add these options to biblatex: url=false,eprint=false
+% to suppress printing of these fields.
 \addbibresource{bibliography.bib}
 \defbibheading{bibliography}[\refname]{\paragraph{#1:}}
 \defbibenvironment{bibliography}{\inparaenum[ {[}\printfield{labelnumber}{]}]}{\endinparaenum}{\textbf{\item}}
@@ -45,36 +46,65 @@
 
 \usepackage{paralist}			% For compressing bibliography into a paragraph
 
-% \usepackage{balance}			% For balancing columns on the page.
-								
+% \usepackage{balance}			% For balancing columns on the page, and uncomment
+                                % \balance below in the document.
 
+\usepackage{authblk}            % To enable use of \title, \author, \affil, and \maketitle
 \usepackage{lpscabs}			% This is to take care of some LPSC abstract
 								% document-specific things and set sizes.
 
-\usepackage[pdftex,colorlinks=true,urlcolor=blue,citecolor=black,linkcolor=black]{hyperref}
+\usepackage[colorlinks=true,urlcolor=blue,citecolor=black,linkcolor=black]{hyperref}
 								% Puts actual hyperlinks in your PDF, optional.
 
 \begin{document}
 
-% The \titlearea command takes two arguments in curly braces {}.  The first
-% will be used as the title, and the second as the author info.
+% There are two options to specify the title and author block.  The first way
+% uses the \titlearea command, the second way requires the authblk package:
+
+%111111 \titlearea method 111111111%
+%1
+%1 The \titlearea command takes two arguments in curly braces {}.  The first
+%1 will be used as the title, and the second as the author info.
 
 \titlearea{Using \LaTeX\ to write an LPSC Abstract.}{Ross A. Beyer$^{1,2}$ and Moses P. Milazzo$^{3}$, $^1$Carl Sagan Center at the SETI Institute, $^2$NASA Ames Research Center, MS 245-3, Moffett Field, CA, USA (\href{mailto:Ross.A.Beyer@nasa.gov}{Ross.A.Beyer@nasa.gov}), and $^3$Astrogeology Science Center, United States Geological Survey}
 
-% Here is an example with just one author:
-%
-%\titlearea{Using \LaTeX\ to write an LPSC Abstract.}{Ross A. Beyer, NASA Ames Research Center, MS 245-3, Moffett Field, CA, USA (Ross.A.Beyer@nasa.gov)}
+%1 Here is an example with just one author:
+%1
+%1 \titlearea{Using \LaTeX\ to write an LPSC Abstract.}{Ross A. Beyer, NASA Ames Research Center, MS 245-3, Moffett Field, CA, USA (Ross.A.Beyer@nasa.gov)}
 
-% Here is an example with more than one author from more than one place:
-%
-% \titlearea{Using \LaTeX\ to write an LPSC Abstract.}{Ross A. Beyer$^{1,2}$, John Q. Public$^{a}$, and Jane Doe$^{\dag}$, $^1$Carl Sagan Center at the SETI Institute, $^2$NASA Ames Research Center, MS 245-3, Moffett Field, CA, USA (Ross.A.Beyer@nasa.gov), $^{a}$123 Sesame Street, New York NY, USA, $^{\dag}$890 Somewhere, ID, USA}
+%1 Here is an example with more than one author from more than one place:
+%1
+%1 \titlearea{Using \LaTeX\ to write an LPSC Abstract.}{Ross A. Beyer$^{1,2}$, John Q. Public$^{a}$, and Jane Doe$^{\dag}$, $^1$Carl Sagan Center at the SETI Institute, $^2$NASA Ames Research Center, MS 245-3, Moffett Field, CA, USA (Ross.A.Beyer@nasa.gov), $^{a}$123 Sesame Street, New York NY, USA, $^{\dag}$890 Somewhere, ID, USA}
+
+%222222222 authblk method 222222222222%
+%2
+%2 If you have a lot of authors, writing out all of those dollar signs and carets can
+%2 be time consuming and error-prone.  If you uncomment the \usepackage{authblk} above,
+%2 you could do the following:
+%2 
+%2 \title{Using \LaTeX\ to write an LPSC Abstract.}
+%2 \author[1,2]{Ross A. Beyer}
+%2 \affil[1]{SETI Institute, (\href{mailto:rbeyer@seti.org}{rbeyer@seti.org})}
+%2 \affil[2]{NASA Ames Research Center}
+%2 
+%2 \author[3]{Moses Milazzo}
+%2 \affil[3]{Other Orb, LLC}
+%2 
+%2 \author[4]{K. Michael Aye}
+%2 \affil[4]{University of Colorado, Boulder}
+%2 
+%2 \author[5]{Lucy Lim}
+%2 \affil[5]{NASA Goddard}
+%2 
+%2 \maketitle
+
 
 % Uncomment \usepackage{balance} above to use this:
 % \balance
 
 There used to be a \LaTeX\ template and a style file for writing
 Lunar and Planetary Science Conference (LPSC) abstracts available
-on the LPSC Web site.  However, no such template has been available
+on the LPI Web site.  However, no such template has been available
 for some time, and we found ourselves dragging the old one out.  It
 was full of scary \TeX\ commands and had a date from 1996 in it,
 so we decided to start from scratch and write a
@@ -109,6 +139,10 @@ something that can be all things to all people, we'll just let you
 smart people.  It is a little less convenient, but we think it is more
 flexible.  We have commented out a few multiple author styles up
 near that section of this source file.
+
+We recently added support for the \texttt{authblk} package to make dealing
+with long author lists less of a pain.  There's a commented-out example
+in this \texttt{.tex} file.
 
 \paragraph{Section styles:}
 
@@ -163,7 +197,7 @@ file).
 \paragraph{URLs and hyperlinks:}
 
 Let's face it, the odds are good that more people will read this
-abstract on their computer screens via a PDF reader than will do
+abstract on a screen with a PDF reader than will do
 so on paper.  Fortunately, PDFs can contain active hyperlinks that
 can fire off a Web browser, or your e-mail client, and the
 \verb=hyperref= package helps you do this.  It is used in this
@@ -174,17 +208,14 @@ The \verb=hyperref= package has some options that we should probably
 detail.  Here's a copy of the command in this document (carriage returns 
 included for clarity):
 \begin{verbatim}
-\usepackage[pdftex,colorlinks=true,
+\usepackage[colorlinks=true,
   urlcolor=blue,citecolor=black,
   linkcolor=black]{hyperref}
 \end{verbatim}
 \noindent
 The options in the square brackets are important, and
 \url{http://www.tug.org/applications/hyperref/manual.html} details
-all of them.  The first item \verb=pdftex= is because we mostly use
-\verb=pdflatex= to create PDF files from our \verb=.tex= files.  If
-you use \verb=ps2pdf=, or something else, you'll want to specify
-something else here.  The \verb=colorlinks= and \verb=urlcolor=
+all of them.  The \verb=colorlinks= and \verb=urlcolor=
 options should be reasonably self-explanatory, but you may wonder
 why we set \verb=citecolor= and \verb=linkcolor= to black.  The
 \verb=hyperref= package is good, it actually creates links for all
@@ -222,6 +253,15 @@ Creative Commons web site at \url{http://creativecommons.org/science}.
 
 
 \paragraph{Works that you reference:}
+
+The best way to get a compact reference list as we have in this
+document is to use \texttt{biblatex} with the \texttt{Biber} backend.
+
+However, that is relatively new-fangled as compared to the old style
+of using \texttt{natbib}, so we have left those commands commented
+out in the \texttt{.tex} file, but you have to play a lot more tricks
+with \texttt{natbib} to get something even close to what \texttt{biblatex}
+manages with much less typing.
 
 Using \texttt{natbib} with the \texttt{numbers} option and the
 \texttt{unsrtnat} bibliographystyle approximates the reference-style

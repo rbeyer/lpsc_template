@@ -11,7 +11,7 @@ figure depending on if you use pdflatex or latex, dvips, and ps2pdf.
 
 | File               | Description                                                                      |
 | ----               | -----------
-| Makefile           | example GNU make file for use with the latexmk system, optional                 |
+| Makefile           | example GNU make file for use with the latexmk system, optional                  |
 | bibliography.bib   | Sample bibliography file                                                         |
 | lb_fig1.eps        | Sample figure, EPS format                                                        |
 | lb_fig1.png        | Sample figure, PNG format                                                        |
@@ -32,12 +32,14 @@ LPI complains about your format (or rejects your abstract).
 
 Now, get back to work and write that abstract!
 
-Ross A. Beyer (Ross.A.Beyer@nasa.gov) and 
-Moses P. Milazzo (moses@usgs.gov)
-
+Ross A. Beyer (rbeyer@seti.org), Moses Milazzo, and the other contributors.
 
 
 ## Changelog
+
+Jan 2020
+- Dealing with long author lists finally got to me, and I included a mechanism that
+	uses the authblk package that makes things a little easier.
 
 Apr 2018
 - Discovered that the old margin handling was leaving too much margin at the top of the page because
